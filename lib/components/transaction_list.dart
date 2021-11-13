@@ -12,8 +12,10 @@ class TransactionList extends StatelessWidget {
     // This part of code shows all the expenses registered in the app
     return SizedBox(
       height: 400,
-      child: ListView(
-        children: transactions.map((tr) {
+      child: ListView.builder(
+        itemCount: transactions.length,
+        itemBuilder: (ctx, index) {
+          final tr = transactions[index];
           return Card(
             child: Row(
               children: [
@@ -61,7 +63,7 @@ class TransactionList extends StatelessWidget {
               ],
             ),
           );
-        }).toList(),
+        },
       ),
     );
   }
