@@ -23,37 +23,7 @@ class _TransactionUserState extends State<TransactionUser> {
       title: "Conta de luz",
       value: 211.30,
       date: DateTime.now(),
-    ),
-    Transaction(
-      id: "t3",
-      title: "Conta de zeez",
-      value: 211.30,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: "t4",
-      title: "Conta de zaaz",
-      value: 211.30,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: "t5",
-      title: "Conta de Aaa",
-      value: 211.30,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: "t6",
-      title: "Conta de jooj",
-      value: 211.30,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: "t7",
-      title: "Conta de ojjo",
-      value: 211.30,
-      date: DateTime.now(),
-    ),
+    )
   ];
 
   // This function receive the title and value inserted by the user and change the state of the aplication
