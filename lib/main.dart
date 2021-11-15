@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
     )
   ];
 
-  // This function receive the title and value inserted by the user and change the state of the aplication
+  // This function adds the title and value inserted by the user to the transaction form and shows on screen
   _addTransaction(String title, double value) {
     final newTransaction = Transaction(
       id: Random().nextDouble().toString(),
@@ -50,6 +50,8 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _transactions.add(newTransaction);
     });
+
+    Navigator.of(context).pop();
   }
 
   _openTransactionFormModal(BuildContext context) {

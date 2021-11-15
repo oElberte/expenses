@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 
-class TransactionForm extends StatelessWidget {
-  TransactionForm(this.onSubmit, {Key? key}) : super(key: key);
+class TransactionForm extends StatefulWidget {
+  final void Function(String, double) onSubmit;
 
+  const TransactionForm(this.onSubmit, {Key? key}) : super(key: key);
+
+  @override
+  State<TransactionForm> createState() => _TransactionFormState();
+}
+
+class _TransactionFormState extends State<TransactionForm> {
   final titleController = TextEditingController();
   final valueController = TextEditingController();
 
-  // This function receive the title and value from "_addTransaction"
-  final void Function(String, double) onSubmit;
-
-  // This function receive the title and the value inserted by the user and check if is valid for show in the app
   _submitForm() {
     final title = titleController.text;
     final value = double.tryParse(valueController.text) ?? 0.0;
@@ -18,7 +21,7 @@ class TransactionForm extends StatelessWidget {
       return;
     }
 
-    onSubmit(title, value);
+    widget.onSubmit(title, value);
   }
 
   @override
@@ -52,11 +55,17 @@ class TransactionForm extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                ElevatedButton(
+                TextButton(
                   onPressed: _submitForm,
-                  child: const Icon(Icons.add),
+                  child: const Text(
+                    "Nova transação",
+                    style: TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
                   style: ElevatedButton.styleFrom(
-                    primary: Colors.purple,
+                    primary: Colors.white,
+                    onPrimary: Colors.purple,
                   ),
                 ),
               ],
