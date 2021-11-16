@@ -50,22 +50,29 @@ class _TransactionFormState extends State<TransactionForm> {
                 labelText: "Valor (R\$)",
               ),
             ),
-
             // This Row is the button for add the expenses to the list
+            SizedBox(
+              height: 70,
+              child: Row(
+                children: [
+                  Text("Nenhuma data selecionada!"),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("Selecionar data"),
+                  )
+                ],
+              ),
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                TextButton(
+                ElevatedButton(
                   onPressed: _submitForm,
                   child: const Text(
                     "Nova transação",
                     style: TextStyle(
                       fontSize: 16,
                     ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    onPrimary: Colors.purple,
                   ),
                 ),
               ],
