@@ -7,6 +7,7 @@ class Chart extends StatelessWidget {
   final List<Transaction> recentTransaction;
   const Chart(this.recentTransaction, {Key? key}) : super(key: key);
 
+  // This getter generate a list with the day and value of the expenses in a week
   List<Map<String, Object>> get groupedTransactions {
     return List.generate(7, (index) {
       final weekDay = DateTime.now().subtract(
@@ -32,12 +33,14 @@ class Chart extends StatelessWidget {
     }).reversed.toList();
   }
 
+  // This getter calculate the total of expenses in the week
   double get _weekTotalValue {
     return groupedTransactions.fold(0.0, (sum, tr) {
       return sum + (tr['value'] as double);
     });
   }
 
+  // This widget shows the chart of the expenses
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -52,7 +55,7 @@ class Chart extends StatelessWidget {
               child: ChartBar(
                 label: tr["day"].toString(),
                 value: tr["value"] as double,
-                percentage: (tr["value"] as double) / _weekTotalValue,
+                percentage: _weekTotalValue == 0 ? 0 : (tr["value"] as double) / _weekTotalValue,
               ),
             );
           }).toList(),

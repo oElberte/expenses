@@ -11,6 +11,7 @@ class ChartBar extends StatelessWidget {
     required this.percentage,
   });
 
+  // This widget controls the percentage bars in the chart
   @override
   Widget build(BuildContext context) {
     return Column(
