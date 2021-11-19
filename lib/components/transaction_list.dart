@@ -6,7 +6,8 @@ class TransactionList extends StatelessWidget {
   final List<Transaction> transactions;
   final void Function(String) onRemove;
 
-  TransactionList(this.transactions, this.onRemove);
+  const TransactionList(this.transactions, this.onRemove, {Key? key})
+      : super(key: key);
 
   // This widget shows all the expenses registered in the app
   @override
@@ -61,11 +62,19 @@ class TransactionList extends StatelessWidget {
                   subtitle: Text(
                     DateFormat("d MMM y").format(tr.date),
                   ),
-                  trailing: IconButton(
-                    icon: const Icon(Icons.delete),
-                    color: Theme.of(context).errorColor,
-                    onPressed: () => onRemove(tr.id),
-                  ),
+                  trailing: MediaQuery.of(context).size.width > 480
+                      ? TextButton.icon(
+                          onPressed: () => onRemove(tr.id),
+                          icon: const Icon(Icons.delete),
+                          label: const Text("Excluir"),
+                          style: TextButton.styleFrom(
+                              primary: Theme.of(context).errorColor),
+                        )
+                      : IconButton(
+                          icon: const Icon(Icons.delete),
+                          color: Theme.of(context).errorColor,
+                          onPressed: () => onRemove(tr.id),
+                        ),
                 ),
               );
             },
