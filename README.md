@@ -1,16 +1,25 @@
-# expenses
+# Expenses
 
-A new Flutter project.
+Application to record personal expenses based on Flutter.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+The Expenses app is used to store personal expenses of the most varied, all you need to do is enter the app, type the expense title, the amount and the date, that's it!
 
-A few resources to get you started if this is your first Flutter project:
+## Supported devices:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+* Android
+* iOS
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Features:
+
+* Add expenses in R$
+* Select date
+* Delete expenses
+* Purchase chart based on last 7 days
+* Total amount spent in the last 7 days
+
+### Up-Coming features:
+
+* Folders for individual expenses (like credit cards)
+* Total spent in the month

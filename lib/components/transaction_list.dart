@@ -9,7 +9,7 @@ class TransactionList extends StatelessWidget {
   const TransactionList(this.transactions, this.onRemove, {Key? key})
       : super(key: key);
 
-  // This widget shows all the expenses registered in the app
+  // This widget shows the list with the expenses registered in the app
   @override
   Widget build(BuildContext context) {
     return transactions.isEmpty
